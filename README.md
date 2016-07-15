@@ -116,10 +116,9 @@ status updated to the rest of the system.
 
 #### Are there specific technologies that would fit here better than others?
 
-I'd recommend using Redis for the caching server as well as the task queue broker. For a database
+I'd recommend using Redis for the caching server. Celery or [Kue](https://github.com/Automattic/kue)the task management. For a database
 it really doesn't matter much in my thinking; something with low latency reads would be ideal. Given
 that all our long running jobs are out-of-band then it seems like Node/Express/Koa would work well for
 handling the requests. That said, AWS has a swarm of managed services that could be exploited to
 stitch this together; SQS and Elastic Beanstalk (and to a lesser degree Lambda) come to mind. After all,
 not everyone wants to feed and water a cluster of Redis servers...
-
