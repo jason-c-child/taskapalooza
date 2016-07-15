@@ -116,7 +116,7 @@ status updated to the rest of the system.
 
 #### Are there specific technologies that would fit here better than others?
 
-I'd recommend using Redis for the caching server. Celery or [Kue](https://github.com/Automattic/kue)the task management. For a database
+I'd recommend using Redis for the caching server. Celery (python) or [Kue](https://github.com/Automattic/kue) (node) for task management. For a database
 it really doesn't matter much in my thinking; something with low latency reads would be ideal. Given
 that all our long running jobs are out-of-band then it seems like Node/Express/Koa would work well for
 handling the requests. That said, AWS has a swarm of managed services that could be exploited to
